@@ -6,14 +6,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
-import '@fontsource/roboto';
 import theme from './theme';
+import Main from './layouts/main';
 import ProTip from './components/ProTip';
 import NavBar from './components/NavBar';
 import Landing from './views/landing';
 import Landing1 from './views/landing1';
-
-import Main from './layouts/main';
+import './styles/index.css';
 
 function Copyright() {
   return (
