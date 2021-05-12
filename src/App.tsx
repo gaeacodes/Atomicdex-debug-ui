@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  MemoryRouter,
-  Route,
-  Switch,
-  Link as RouterLink,
-} from 'react-router-dom';
+import { MemoryRouter, Route, Switch } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
