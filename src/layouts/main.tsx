@@ -1,10 +1,17 @@
 import React from 'react';
 
-const main = ({ children }) => (
-  <div>
-    <h2>Layout</h2>
-    {children}
-  </div>
-);
+interface Props {
+  children: React.ReactNode;
+}
 
-export default main;
+const Main = (props: Props) => {
+  const { children } = props;
+  return (
+    <div>
+      <h2>Layout</h2>
+      {children}
+    </div>
+  );
+};
+
+export default Main;

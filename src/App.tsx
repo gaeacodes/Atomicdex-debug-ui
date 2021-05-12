@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  MemoryRouter,
   Route,
   Switch,
-  Redirect,
+  Link as RouterLink,
 } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -14,7 +14,10 @@ import Link from '@material-ui/core/Link';
 import '@fontsource/roboto';
 import theme from './theme';
 import ProTip from './components/ProTip';
+import NavBar from './components/NavBar';
 import Landing from './views/landing';
+import Landing1 from './views/landing1';
+
 import Main from './layouts/main';
 
 function Copyright() {
@@ -22,41 +25,65 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Komodo Platform
       </Link>{' '}
-      {new Date().getFullYear()}
-      `.`
+      {`${new Date().getFullYear()}.`}
     </Typography>
   );
 }
 
-function RouteWrapper({ component: Component, layout: Layout, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      render={(props) => (
-        <Layout {...props}>
-          <Component {...props} />
-        </Layout>
-      )}
-    />
-  );
+interface PropsRouteWrapper {
+  component: any;
+  layout: any;
+  path: string;
+  exact: boolean;
 }
+
+const RouteWrapper: React.FunctionComponent<PropsRouteWrapper> = (
+  props: PropsRouteWrapper
+) => {
+  const { component: Component, layout: Layout, path, exact } = props;
+  return (
+    <Route path={path} exact={exact}>
+      <Layout>
+        <Component />
+      </Layout>
+    </Route>
+  );
+};
 
 export default function App() {
   return (
-    <Router>
+    <MemoryRouter>
       <ThemeProvider theme={theme}>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        <CssBaseline />
+        <NavBar />
         <Container>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
           <Box my={4}>
             <Typography variant="h4" component="h1" gutterBottom>
               Create React App v4-beta example
             </Typography>
-            <Link href="/one">One</Link>
             <Switch>
-              <RouteWrapper path="/one" component={Landing} layout={Main} />
+              <RouteWrapper path="/" exact component={Landing} layout={Main} />
+              <RouteWrapper
+                path="/one"
+                component={Landing1}
+                layout={Main}
+                exact
+              />
+              <RouteWrapper
+                path="/two"
+                component={Landing1}
+                layout={Main}
+                exact
+              />
+              <RouteWrapper
+                path="/three"
+                component={Landing1}
+                layout={Main}
+                exact
+              />
             </Switch>
 
             <ProTip />
@@ -64,6 +91,6 @@ export default function App() {
           </Box>
         </Container>
       </ThemeProvider>
-    </Router>
+    </MemoryRouter>
   );
 }
