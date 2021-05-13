@@ -87,7 +87,8 @@
     "publish": {
       "provider": "github",
       "owner": "gaeacodes",
-      "repo": "Atomicdex-debug-ui"
+      "repo": "Atomicdex-debug-ui",
+      "releaseType": "draft"
     }
   },
   "repository": {
