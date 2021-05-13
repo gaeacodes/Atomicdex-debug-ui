@@ -1,7 +1,7 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "ElectronReact",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Fast Refresh for rapid application development",
+  "name": "atomicdex-debug-ui",
+  "productName": "AtomicDEXdebugUI",
+  "description": "To debug mm2, AtomicDEX issues using GUI.Electron application boilerplate based on React, React Router, Webpack, React Fast Refresh for rapid application development",
   "scripts": {
     "build": "concurrently \"yarn build:main\" \"yarn build:renderer\"",
     "build:main": "cross-env NODE_ENV=production webpack --config ./.erb/configs/webpack.config.main.prod.babel.js",
@@ -30,8 +30,8 @@
     ]
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "AtomicDEXdebugUI",
+    "appId": "org.thenewblocker.AtomicDEXdebugUI",
     "files": [
       "dist/",
       "node_modules/",
@@ -86,20 +86,25 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "gaeacodes",
+      "repo": "Atomicdex-debug-ui"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "git+https://github.com/gaeacodes/Atomicdex-debug-ui.git"
   },
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
+    "name": "gaeacodes",
+    "email": "gaeacodes@gmail.com",
+    "url": ""
   },
   "contributors": [
+    {
+      "name": "Electron React Boilerplate Maintainers",
+      "email": "electronreactboilerplate@gmail.com",
+      "url": "https://electron-react-boilerplate.js.org"
+    },
     {
       "name": "Amila Welihinda",
       "email": "amilajack@gmail.com",
@@ -113,9 +118,13 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
+    "url": "https://github.com/gaeacodes/Atomicdex-debug-ui/issues"
   },
   "keywords": [
+    "atomicdex",
+    "mm2",
+    "dex",
+    "atomic-swap",
     "electron",
     "boilerplate",
     "react",
@@ -126,7 +135,7 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/gaeacodes/Atomicdex-debug-ui#readme",
   "jest": {
     "testURL": "http://localhost/",
     "moduleNameMapper": {
@@ -266,7 +275,7 @@
     "yarn": ">=1.21.3"
   },
   "collective": {
-    "url": "https://opencollective.com/electron-react-boilerplate-594"
+    "url": ""
   },
   "browserslist": [],
   "prettier": {
